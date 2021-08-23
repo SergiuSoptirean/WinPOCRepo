@@ -48,15 +48,15 @@ namespace FLAUINetCore
             {
                 throw e;
             }
-            
-            //_mainWindow.AsTextBox().Text = "This should appear in Notepad";
-            //var FileMenu = _mainWindow.FindAllDescendants(x => x.ByName("File")).First();
-            //FileMenu.Click();
 
-            //var fileMenuItem = _mainWindow.FindAllDescendants(x => x.ByName("Save")).First();
+            _mainWindow.AsTextBox().Text = "This should appear in Notepad";
+            var FileMenu = _mainWindow.FindAllDescendants(x => x.ByName("File")).First();
+            FileMenu.Click();
 
-            //Thread.Sleep(3000);
-            //_app.Close();
+            var fileMenuItem = _mainWindow.FindAllDescendants(x => x.ByName("Save")).First();
+
+            Thread.Sleep(3000);
+            _app.Close();
             System.Console.WriteLine("The test ends here");
         }
 
