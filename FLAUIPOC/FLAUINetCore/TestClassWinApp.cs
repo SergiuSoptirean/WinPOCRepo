@@ -34,7 +34,9 @@ namespace FLAUINetCore
             System.Console.WriteLine("The test starts here");
             System.Diagnostics.Debug.WriteLine("DEBUG The test starts here");
             TestContext.WriteLine("TEST STARTS HERE");
+
             _app = Application.Launch("notepad.exe");
+
             System.Console.WriteLine("App is launched");
 
             _automation = new UIA3Automation();
