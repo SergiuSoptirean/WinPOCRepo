@@ -32,8 +32,6 @@ namespace FLAUINetCore
         public void StartApp()
         {
             System.Console.WriteLine("The test starts here");
-            System.Diagnostics.Debug.WriteLine("DEBUG The test starts here");
-            TestContext.WriteLine("TEST STARTS HERE");
 
             _app = Application.Launch("notepad.exe");
 
@@ -41,16 +39,15 @@ namespace FLAUINetCore
 
             _automation = new UIA3Automation();
             _mainWindow = _app.GetMainWindow(_automation);
-            _mainWindow.AsTextBox().Text = "This should appear in Notepad";
-            var FileMenu = _mainWindow.FindAllDescendants(x => x.ByName("File")).First();
-            FileMenu.Click();
+            //_mainWindow.AsTextBox().Text = "This should appear in Notepad";
+            //var FileMenu = _mainWindow.FindAllDescendants(x => x.ByName("File")).First();
+            //FileMenu.Click();
 
-            var fileMenuItem = _mainWindow.FindAllDescendants(x => x.ByName("Save")).First();
+            //var fileMenuItem = _mainWindow.FindAllDescendants(x => x.ByName("Save")).First();
 
-            Thread.Sleep(3000);
-            _app.Close();
+            //Thread.Sleep(3000);
+            //_app.Close();
             System.Console.WriteLine("The test ends here");
-            System.Diagnostics.Debug.WriteLine("DEBUG The test ends here");
         }
 
     }
