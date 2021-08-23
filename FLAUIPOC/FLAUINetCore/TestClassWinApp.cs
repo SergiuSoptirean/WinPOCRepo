@@ -2,6 +2,7 @@
 using FlaUI.Core.AutomationElements;
 using FlaUI.UIA3;
 using NUnit.Framework;
+using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
@@ -38,7 +39,7 @@ namespace FLAUINetCore
             System.Console.WriteLine("App is launched");
 
             _automation = new UIA3Automation();
-            _mainWindow = _app.GetMainWindow(_automation);
+            _mainWindow = _app.GetMainWindow(_automation, TimeSpan.FromSeconds(20));
             //_mainWindow.AsTextBox().Text = "This should appear in Notepad";
             //var FileMenu = _mainWindow.FindAllDescendants(x => x.ByName("File")).First();
             //FileMenu.Click();
