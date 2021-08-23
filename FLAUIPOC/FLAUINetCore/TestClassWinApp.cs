@@ -30,7 +30,9 @@ namespace FLAUINetCore
         [Test]
         public void StartApp()
         {
+            System.Console.WriteLine("The test starts here");
             _app = Application.Launch("notepad.exe");
+            System.Console.WriteLine("App is launched");
 
             _automation = new UIA3Automation();
             _mainWindow = _app.GetMainWindow(_automation);
@@ -42,6 +44,7 @@ namespace FLAUINetCore
 
             Thread.Sleep(3000);
             _app.Close();
+            System.Console.WriteLine("The test ends here");
         }
 
     }
