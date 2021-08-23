@@ -2,7 +2,7 @@
 using FlaUI.Core.AutomationElements;
 using FlaUI.UIA3;
 using NUnit.Framework;
-using System.Linq;
+using System.Diagnostics;
 using System.Threading;
 
 namespace FLAUINetCore
@@ -31,6 +31,7 @@ namespace FLAUINetCore
         public void StartApp()
         {
             System.Console.WriteLine("The test starts here");
+            System.Diagnostics.Debug.WriteLine("DEBUG The test starts here");
             //_app = Application.Launch("notepad.exe");
             //System.Console.WriteLine("App is launched");
 
@@ -45,6 +46,7 @@ namespace FLAUINetCore
             //Thread.Sleep(3000);
             //_app.Close();
             System.Console.WriteLine("The test ends here");
+            System.Diagnostics.Debug.WriteLine("DEBUG The test ends here");
         }
 
     }
