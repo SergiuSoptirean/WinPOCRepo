@@ -39,7 +39,16 @@ namespace FLAUINetCore
             System.Console.WriteLine("App is launched");
 
             _automation = new UIA3Automation();
-            _mainWindow = _app.GetMainWindow(_automation, TimeSpan.FromSeconds(20));
+
+            try
+            {
+                _mainWindow = _app.GetMainWindow(_automation, TimeSpan.FromSeconds(20));
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            
             //_mainWindow.AsTextBox().Text = "This should appear in Notepad";
             //var FileMenu = _mainWindow.FindAllDescendants(x => x.ByName("File")).First();
             //FileMenu.Click();
