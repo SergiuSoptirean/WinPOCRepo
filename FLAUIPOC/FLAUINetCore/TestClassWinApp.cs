@@ -3,6 +3,7 @@ using FlaUI.Core.AutomationElements;
 using FlaUI.UIA3;
 using NUnit.Framework;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading;
 
 namespace FLAUINetCore
@@ -33,19 +34,19 @@ namespace FLAUINetCore
             System.Console.WriteLine("The test starts here");
             System.Diagnostics.Debug.WriteLine("DEBUG The test starts here");
             TestContext.WriteLine("TEST STARTS HERE");
-            //_app = Application.Launch("notepad.exe");
-            //System.Console.WriteLine("App is launched");
+            _app = Application.Launch("notepad.exe");
+            System.Console.WriteLine("App is launched");
 
-            //_automation = new UIA3Automation();
-            //_mainWindow = _app.GetMainWindow(_automation);
-            //_mainWindow.AsTextBox().Text = "This should appear in Notepad";
-            //var FileMenu = _mainWindow.FindAllDescendants(x => x.ByName("File")).First();
-            //FileMenu.Click();
+            _automation = new UIA3Automation();
+            _mainWindow = _app.GetMainWindow(_automation);
+            _mainWindow.AsTextBox().Text = "This should appear in Notepad";
+            var FileMenu = _mainWindow.FindAllDescendants(x => x.ByName("File")).First();
+            FileMenu.Click();
 
-            //var fileMenuItem = _mainWindow.FindAllDescendants(x => x.ByName("Save")).First();
+            var fileMenuItem = _mainWindow.FindAllDescendants(x => x.ByName("Save")).First();
 
-            //Thread.Sleep(3000);
-            //_app.Close();
+            Thread.Sleep(3000);
+            _app.Close();
             System.Console.WriteLine("The test ends here");
             System.Diagnostics.Debug.WriteLine("DEBUG The test ends here");
         }
