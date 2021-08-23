@@ -31,19 +31,19 @@ namespace FLAUINetCore
         public void StartApp()
         {
             System.Console.WriteLine("The test starts here");
-            _app = Application.Launch("notepad.exe");
-            System.Console.WriteLine("App is launched");
+            //_app = Application.Launch("notepad.exe");
+            //System.Console.WriteLine("App is launched");
 
-            _automation = new UIA3Automation();
-            _mainWindow = _app.GetMainWindow(_automation);
-            _mainWindow.AsTextBox().Text = "This should appear in Notepad";
-            var FileMenu = _mainWindow.FindAllDescendants(x => x.ByName("File")).First();
-            FileMenu.Click();
+            //_automation = new UIA3Automation();
+            //_mainWindow = _app.GetMainWindow(_automation);
+            //_mainWindow.AsTextBox().Text = "This should appear in Notepad";
+            //var FileMenu = _mainWindow.FindAllDescendants(x => x.ByName("File")).First();
+            //FileMenu.Click();
 
-            var fileMenuItem = _mainWindow.FindAllDescendants(x => x.ByName("Save")).First();
+            //var fileMenuItem = _mainWindow.FindAllDescendants(x => x.ByName("Save")).First();
 
-            Thread.Sleep(3000);
-            _app.Close();
+            //Thread.Sleep(3000);
+            //_app.Close();
             System.Console.WriteLine("The test ends here");
         }
 
